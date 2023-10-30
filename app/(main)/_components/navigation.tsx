@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
-// import { useMediaQuery } from "usehooks-ts";
+import { useMediaQuery } from "usehooks-ts";
 import { useMutation } from "convex/react";
 // import { toast } from "sonner";
 
@@ -37,14 +37,14 @@ export const Navigation = () => {
 //   const search = useSearch();
   const params = useParams();
   const pathname = usePathname();
-//   const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 768px)");
 //   const create = useMutation(api.documents.create);
 
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<"aside">>(null);
   const navbarRef = useRef<ElementRef<"div">>(null);
   const [isResetting, setIsResetting] = useState(false);
-//   const [isCollapsed, setIsCollapsed] = useState(isMobile);
+  const [isCollapsed, setIsCollapsed] = useState(isMobile);
 
 //   useEffect(() => {
 //     if (isMobile) {
@@ -152,28 +152,28 @@ export const Navigation = () => {
             >
                 <ChevronsLeft className="h-6 w-6" />
             </div>
+        <div>
+          {/* <UserItem />
+          <Item
+            label="Search"
+            icon={Search}
+            isSearch
+            onClick={search.onOpen}
+          />
+          <Item
+            label="Settings"
+            icon={Settings}
+            onClick={settings.onOpen}
+          />
+          <Item
+            onClick={handleCreate}
+            label="New page"
+            icon={PlusCircle}
+          /> */}
+        </div>
         </aside>
     </>
 
-    //     <div>
-    //       <UserItem />
-    //       <Item
-    //         label="Search"
-    //         icon={Search}
-    //         isSearch
-    //         onClick={search.onOpen}
-    //       />
-    //       <Item
-    //         label="Settings"
-    //         icon={Settings}
-    //         onClick={settings.onOpen}
-    //       />
-    //       <Item
-    //         onClick={handleCreate}
-    //         label="New page"
-    //         icon={PlusCircle}
-    //       />
-    //     </div>
     //     <div className="mt-4">
     //       <DocumentList />
     //       <Item
